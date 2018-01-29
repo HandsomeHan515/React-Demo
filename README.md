@@ -10,7 +10,7 @@
 
 3. 修改 webpack.config.dev.js 和 webpack.config.prod.js
 
-![webpack 修改](./src/images/less.png  =600x300)
+![webpack 修改](./src/images/less.png)
 
 ## 在 create-react-app 中使用 antd
 
@@ -18,4 +18,4 @@
 
 2. 修改 webpack.config.dev.js 和 webpack.config.prod.js
 
-![webpack 修改](./src/images/antd.png  =600x300)
+![webpack 修改](./src/images/antd.png)
