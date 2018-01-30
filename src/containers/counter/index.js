@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../../less/global.less';
+import '../../less/counter.less';
 import { store } from '../../redux';
 import { Button } from 'antd';
 
-class Group extends Component {
+class Counter extends Component {
   constructor(props) {
     super(props);
     const { counter } = store.getState();
@@ -27,12 +27,12 @@ class Group extends Component {
     return (
       <div className="center">
         <h1> redux 计数器案例</h1>
-        <Button onClick={this.increment}>增加</Button>
+        <Button className="counter-right" onClick={this.increment}>增加</Button>
         <Button onClick={this.decrement}>减少</Button>
-        <p>{this.state.counter}</p>
+        <p>当前数字：{this.state.counter}</p>
       </div>
     );
   }
 }
 
-export default Group;
+export default Counter;

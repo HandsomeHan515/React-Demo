@@ -1,7 +1,7 @@
 import Home from './home'
-import Group from './group'
+import Counter from './counter'
 import Help from './help'
 import Progress from './progress'
-import Resource from './resource'
+import Todo from './todo'
 
-export { Home, Group, Help, Progress, Resource }
+export { Home, Counter, Help, Progress, Todo }

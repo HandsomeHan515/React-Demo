@@ -4,7 +4,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { Home, Progress, Resource, Group, Help } from './containers';
+import { Home, Progress, Todo, Counter, Help } from './containers';
 import { Header } from './components';
 
 import { store } from './redux';
@@ -19,8 +19,8 @@ ReactDOM.render(
       <Header />
       <Route exact path='/' component={Home} />
       <Route path='/progress' component={Progress} />
-      <Route path='/resource' component={Resource} />
-      <Route path='/group' component={Group} />
+      <Route path='/todo' component={Todo} />
+      <Route path='/counter' component={Counter} />
       <Route path='/help' component={Help} />
     </div>
   </Router>
