@@ -19,7 +19,7 @@ class Home extends Component {
         request({ url: 'https://flower.handsomehan.cn/v1/ads/' }).then(resp => resp.results),
         request({ url: 'https://flower.handsomehan.cn/v1/flowers/' }).then(resp => resp.results)
       ])
-      console.table({ ads, flowers })
+      // console.table({ ads, flowers })
     } catch (error) {
       console.log('error: %o', error)
     }

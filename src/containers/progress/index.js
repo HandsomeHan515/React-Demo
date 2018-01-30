@@ -11,7 +11,7 @@ class Progress extends Component {
     return (
       <div className="center">
         <Button onClick={this.handleClick}>按钮</Button>
-      </div>
+      </div >
     );
   }
 }
