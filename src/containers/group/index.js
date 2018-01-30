@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import '../less/global.less';
+import '../../less/global.less';
 
-class Resource extends Component {
+class Group extends Component {
   render() {
     return (
       <div className="center">
-        Resource
+        group
       </div>
     );
   }
 }
 
-export default Resource;
+export default Group;

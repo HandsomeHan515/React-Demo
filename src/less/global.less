@@ -4,8 +4,16 @@
   text-align: center;
 }
 
-.flex-row (@justify-content: flex-start) {
+.flex-row (@justify-content: flex-start, @align-items: flex-start) {
   display: flex;
   flex-direction: row;
   justify-content: @justify-content;
+  align-items: @align-items;
+}
+
+.flex-column (@justify-content: flex-start, @align-items: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: @justify-content;
+  align-items: @align-items;
 }
