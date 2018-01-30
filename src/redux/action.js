@@ -3,6 +3,7 @@ export const DECREMENT = 'DECREMENT';
 
 export const ADD_TEXT = 'ADD_TEXT';
 export const DEL_TEXT = 'DEL_TEXT';
+export const UPDATE_TEXT = 'UPDATE_TEXT';
 
 export const increment = payload => ({
   type: INCREMENT,
@@ -21,5 +22,10 @@ export const addText = payload => ({
 
 export const delText = payload => ({
   type: DEL_TEXT,
+  payload
+})
+
+export const updateText = payload => ({
+  type: UPDATE_TEXT,
   payload
 })

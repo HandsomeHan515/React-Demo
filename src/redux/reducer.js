@@ -22,11 +22,20 @@ let todoInitial = [
 const todo = (state = todoInitial, action) => {
   switch (action.type) {
     case actions.ADD_TEXT:
-      return [state, action.payload]
+      return [...state, action.payload]
 
     case actions.DEL_TEXT:
-      let tmpState = state.slice()
-      return tmpState.filter(item => item.id === !action.payload.id)
+      let tmpState = state.slice().filter(item => item.id !== action.payload.id)
+      return tmpState
+
+    case actions.UPDATE_TEXT:
+      let han = state.slice().map(item => {
+        if (item.id === action.payload.id) {
+          item = action.payload
+        }
+        return item
+      })
+      return han
 
     default:
       return state
