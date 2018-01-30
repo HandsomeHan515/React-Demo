@@ -12,16 +12,24 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    const [ads, flowers] = await Promise.all([
-      request({ url: 'https://flower.handsomehan.cn/v1/ads/' }),
-      request({ url: 'https://flower.handsomehan.cn/v1/flowers/' })
-    ])
-    console.table({ ads, flowers })
+    let ads = [], flowers = []
+
+    try {
+      [ads, flowers] = await Promise.all([
+        request({ url: 'https://flower.handsomehan.cn/v1/ads/' }).then(resp => resp.results),
+        request({ url: 'https://flower.handsomehan.cn/v1/flowers/' }).then(resp => resp.results)
+      ])
+      console.table({ ads, flowers })
+    } catch (error) {
+      console.log('error: %o', error)
+    }
+
     this.setState({
-      ads: ads.results,
+      ads,
       flowers
     })
   }
+
 
   render() {
     return (
@@ -29,7 +37,16 @@ class Home extends Component {
         {
           this.state.ads.map(item => {
             return (
-              <div>
+              <div key={item.id}>
+                {item.title}
+              </div>
+            )
+          })
+        }
+        {
+          this.state.flowers.map(item => {
+            return (
+              <div key={item.id}>
                 {item.title}
               </div>
             )
