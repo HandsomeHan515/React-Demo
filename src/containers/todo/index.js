@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../less/global.less';
 
-class Resource extends Component {
+class Todo extends Component {
   render() {
     return (
       <div className="center">
@@ -11,4 +11,4 @@ class Resource extends Component {
   }
 }
 
-export default Resource;
+export default Todo;
