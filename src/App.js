@@ -6,7 +6,7 @@ const App = props => {
   return (
     <div>
       <Header />
-      <div style={{ minHeight: document.body.clientHeight - 110 }}>
+      <div style={{ minHeight: document.body.clientHeight - 100 }}>
         {props.children}
       </div>
       <Footer />

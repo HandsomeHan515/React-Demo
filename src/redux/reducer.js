@@ -14,12 +14,7 @@ const counter = (state = 0, action) => {
   }
 }
 
-let todoInitial = [
-  { id: 1, name: '看parcel文档', status: 0 },
-  { id: 2, name: 'webpack搭建react', status: 1 }
-]
-
-const todo = (state = todoInitial, action) => {
+const todo = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_TEXT:
       return [...state, action.payload]
@@ -52,9 +47,20 @@ const ads = (state = [], action) => {
   }
 }
 
+const status = (state = {}, action) => {
+  switch (action.type) {
+    case actions.GET_ADS:
+      return [...state, action.payload]
+
+    default:
+      return state
+  }
+}
+
 
 export const reducer = combineReducers({
   counter,
   todo,
-  ads
+  ads,
+  status
 })
