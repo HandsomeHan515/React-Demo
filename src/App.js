@@ -2,7 +2,6 @@ import React from 'react';
 import { Header, Footer } from './components';
 
 const App = props => {
-  console.log('height: %o', document.body.clientHeight)
   return (
     <div>
       <Header />

@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
-import '../../less/global.less';
-import { Button } from 'antd';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+import '../../less/global.less';
+import { connect } from 'react-redux';
 import * as actions from '../../redux/action';
 
-class Progress extends Component {
+class Ad extends Component {
   componentDidMount() {
-    this.props.getAds()
-  }
-
-  handleClick = () => {
-    console.log('this: %o', this.handleClick)
+    this.props.ad()
   }
 
   render() {
     return (
       <div className="center">
-        <Button onClick={this.handleClick}>按钮</Button>
+        {
+          this.props.ads.map(item => {
+            return (
+              <div key={item.id}>
+                {item.title}
+                <img style={{ height: 300, width: 600 }} src={item.image} alt={item.title} />
+              </div>
+            )
+          })
+        }
       </div>
     );
   }
@@ -31,10 +36,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
-    getAds: actions.getAds
+    ad: actions.ad
   }, dispatch)
 )
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Progress);
+)(Ad);

@@ -34,6 +34,12 @@ export const updateText = payload => ({
   payload
 })
 
+export const AD = 'AD';
 export const GET_ADS = 'GET_ADS';
 
-export const getAds = () => ({ type: GET_ADS })
+export const ad = () => ({ type: AD });
+
+export const getAds = payload => ({
+  type: GET_ADS,
+  payload
+})

@@ -40,7 +40,7 @@ const todo = (state = [], action) => {
 const ads = (state = [], action) => {
   switch (action.type) {
     case actions.GET_ADS:
-      return [...state, action.payload]
+      return [...state, ...action.payload]
 
     default:
       return state
@@ -49,8 +49,6 @@ const ads = (state = [], action) => {
 
 const status = (state = {}, action) => {
   switch (action.type) {
-    case actions.GET_ADS:
-      return [...state, action.payload]
 
     default:
       return state

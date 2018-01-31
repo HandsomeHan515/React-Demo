@@ -10,7 +10,7 @@ const initialState = {
       isFetching: true,
       errMsg: undefined
     },
-    todo: {
+    todos: {
       isFetching: true,
       errMsg: undefined,
     }
