@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../less/counter.less';
-import { store } from '../../redux';
+import store from '../../redux';
 import { Button } from 'antd';
 
 class Counter extends Component {

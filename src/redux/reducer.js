@@ -42,7 +42,19 @@ const todo = (state = todoInitial, action) => {
   }
 }
 
+const ads = (state = [], action) => {
+  switch (action.type) {
+    case actions.GET_ADS:
+      return [...state, action.payload]
+
+    default:
+      return state
+  }
+}
+
+
 export const reducer = combineReducers({
   counter,
-  todo
+  todo,
+  ads
 })

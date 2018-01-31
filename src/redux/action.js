@@ -1,3 +1,7 @@
+export const REQUEST = 'REQUEST';
+export const SUCCESS = 'SUCCESS';
+export const FAILURE = 'FAILURE';
+
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
@@ -29,3 +33,7 @@ export const updateText = payload => ({
   type: UPDATE_TEXT,
   payload
 })
+
+export const GET_ADS = 'GET_ADS';
+
+export const getAds = () => ({ type: GET_ADS })

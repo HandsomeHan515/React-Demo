@@ -1,7 +1,8 @@
-import Home from './home'
-import Counter from './counter'
-import Help from './help'
-import Progress from './progress'
-import Todo from './todo'
+import Home from './Home';
+import Counter from './Counter';
+import Help from './Help';
+import Progress from './Progress';
+import Todo from './Todo';
+import NotFound from './NotFound';
 
-export { Home, Counter, Help, Progress, Todo }
+export { Home, Counter, Help, Progress, Todo, NotFound }

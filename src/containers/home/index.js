@@ -21,7 +21,7 @@ class Home extends Component {
       ])
       // console.table({ ads, flowers })
     } catch (error) {
-      console.log('error: %o', error)
+      throw new Error('ads or flowers error')
     }
 
     this.setState({
