@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import * as actions from './action';
+import _ from 'lodash';
 
 const counter = (state = 0, action) => {
   switch (action.type) {
@@ -37,7 +38,7 @@ const todo = (state = [], action) => {
   }
 }
 
-const ads = (state = [], action) => {
+const ads = (state = {}, action) => {
   switch (action.type) {
     case actions.GET_ADS:
       return [...state, ...action.payload]
@@ -49,6 +50,21 @@ const ads = (state = [], action) => {
 
 const status = (state = {}, action) => {
   switch (action.type) {
+    case actions.AD_REQUEST:
+      let request = _.cloneDeep(state)
+      request.ads.isFetching = true
+      return request
+
+    case actions.AD_SUCCESS:
+      let success = _.cloneDeep(state)
+      success.ads.isFetching = false
+      return success
+
+    case actions.AD_FAILURE:
+      let failure = _.cloneDeep(state)
+      failure.ads.isFetching = true
+      failure.ads.errMsg = action.errMsg
+      return failure
 
     default:
       return state

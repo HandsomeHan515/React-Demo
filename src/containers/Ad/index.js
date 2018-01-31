@@ -5,6 +5,8 @@ import '../../less/global.less';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/action';
 
+import { Button } from 'antd';
+
 class Ad extends Component {
   componentDidMount() {
     this.props.ad()
@@ -14,14 +16,17 @@ class Ad extends Component {
     return (
       <div className="center">
         {
-          this.props.ads.map(item => {
-            return (
-              <div key={item.id}>
-                {item.title}
-                <img style={{ height: 300, width: 600 }} src={item.image} alt={item.title} />
-              </div>
-            )
-          })
+          this.props.adStatus.isFetching ?
+            <Button shape="circle" loading />
+            :
+            this.props.ads.map(item => {
+              return (
+                <div key={item.id}>
+                  <h2>{item.title}</h2>
+                  <img style={{ height: 300, width: 600 }} src={item.image} alt={item.title} />
+                </div>
+              )
+            })
         }
       </div>
     );
@@ -30,7 +35,8 @@ class Ad extends Component {
 
 const mapStateToProps = state => {
   return {
-    ads: state.ads
+    ads: state.ads,
+    adStatus: state.status.ads
   }
 }
 
