@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../less/global.less';
-import { request } from '../../server';
+import { request } from '../../utils';
 
 class Home extends Component {
   constructor(props) {
